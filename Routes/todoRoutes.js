@@ -9,9 +9,13 @@ router.get('/', async (req, res) => {
       const users = await User.find()
       res.json(users)
     }
+    else if (req.query.email && !req.query.password) {
+      const users = await User.find({ email: req.query.email })
+      res.json(users)
+    }
     else {
       const user = await User.find({
-        username: req.query.email,
+        email: req.query.email,
         password: req.query.password
       })
       res.json(user)
@@ -23,8 +27,8 @@ router.get('/', async (req, res) => {
 
 router.post('/users', async (req, res) => {
   const user = new User({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password
   })
