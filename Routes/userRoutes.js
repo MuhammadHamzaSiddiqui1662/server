@@ -1,5 +1,5 @@
 const express = require('express');
-const User = require('../Modules/todo');
+const User = require('../Modules/users');
 
 const router = express.Router();
 
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/users', async (req, res) => {
+router.post('/', async (req, res) => {
   const user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,

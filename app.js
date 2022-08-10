@@ -10,8 +10,17 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Imported ROUTES
-const todoRouter = require('./Routes/todoRoutes');
-app.use('/todo', todoRouter);
+const userRouter = require('./Routes/userRoutes');
+app.use('/users', userRouter);
+
+const YoutubePlaylistRouter = require('./Routes/YoutubePlaylistRoutes');
+app.use('/YoutubePlaylist', YoutubePlaylistRouter);
+
+const GeneralJournalRoutes = require('.//Routes/GeneralJournalRoutes');
+app.use('/GeneralJournal', GeneralJournalRoutes);
+
+const LedgerRoutes = require('.//Routes/LedgerRoutes');
+app.use('/Ledger', LedgerRoutes);
 
 //ROUTES
 app.get('/', (req, res) => {
