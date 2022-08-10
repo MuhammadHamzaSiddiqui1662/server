@@ -15,7 +15,7 @@ app.use('/todo', todoRouter);
 
 //ROUTES
 app.get('/', (req, res) => {
-  res.send('We are on home');
+  res.send('We are on home of personal server');
 })
 
 //Connect to DB
