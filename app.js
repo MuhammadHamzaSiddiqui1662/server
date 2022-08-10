@@ -25,4 +25,4 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
 
 //Listen
 const port = process.env.PORT || 5000
-app.listen(port);
+app.listen(port, () => console.log('Server listening on Port ' + port));
